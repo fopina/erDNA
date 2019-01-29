@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="repository.fopina.erdna" name="ping/instant-kodi-repo Repository" version="1.0.1" provider-name="ping">
+    <extension point="xbmc.addon.repository">
+        
+        <dir minversion="17.0.0">
+            <info compressed="false">http://localhost:8000/erDNA/addons.xml</info>
+            <checksum>http://localhost:8000/erDNA/addons.xml.md5</checksum>
+            <datadir zip="true">http://localhost:8000/erDNA/datadir/</datadir>
+        </dir>
+
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">erDNA addon collection</summary>
+        <description lang="en_GB"></description>
+        <language></language>
+        <platform>all</platform>
+        <license>GPL-3.0</license>
+        <forum></forum>
+        <source></source>
+        <news></news>
+        <disclaimer></disclaimer>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart></fanart>
+        </assets>
+    </extension>
+</addon>
