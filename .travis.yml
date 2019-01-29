@@ -1,0 +1,15 @@
+language: python
+
+python:
+  - "2.7"
+
+install: []
+
+script:
+  - .github/build.sh
+
+branches:
+  only:
+    - master
+    - /^\d+\.\d+\.\d+$/
+
