@@ -32,6 +32,7 @@ This setup aims to solve the contribution issue, moving the source of each Kodi 
 Now the addon repositories you make should mimic [erDNA-hello](https://github.com/fopina/erDNA-hello/) repository.
 
 * Enable Travis-CI for it
+* Get your Travis API Key and add it to Travis-CI secret environment variables, naming it `API_TRAVIS_TOKEN`
 * Modify `.travis.yml` with your GitHub Kodi repository API endpoint and addon package name
 
 ### Flow
