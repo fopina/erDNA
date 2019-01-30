@@ -14,6 +14,7 @@ changeToTargetBranch
 
 mkdir -p $REMOTE_NAME
 mv ~/otheraddon/* $REMOTE_NAME/
+python create_repository.py $REMOTE_NAME
 git add $REMOTE_NAME
 git commit -a -m "$REMOTE_NAME updated"
 
