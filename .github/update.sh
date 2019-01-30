@@ -14,6 +14,7 @@ rm -fr ~/otheraddon/.*
 changeToTargetBranch
 
 python create_repository.py */ ~/otheraddon/
+./build_readme.py
 git add .
 git commit -a -m "$REMOTE_NAME updated"
 
