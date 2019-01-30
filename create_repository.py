@@ -301,6 +301,8 @@ def create_repository(
         checksum_path,
         is_compressed,
         no_parallel):
+    # filter out unexpanded paths
+    addon_locations = [_l for _l in addon_locations if '*' not in _l]
     # Import git lazily.
     if any(is_url(addon_location) for addon_location in addon_locations):
         try:
