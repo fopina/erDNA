@@ -13,8 +13,9 @@ fi
 . $(dirname $0)/common.sh
 
 changeToTargetBranch
-git checkout $TRAVIS_TAG -- repository.fopina.erdna
-python create_repository.py */
+mkdir -p $HOME/temp
+git --work-tree $HOME/temp checkout $TRAVIS_TAG -- repository.fopina.erdna
+python create_repository.py */ $HOME/temp/repository.fopina.erdna
 git add repository.fopina.erdna
 git commit -a -m 'repository addon updated'
 setupDeployKeyAndPush
