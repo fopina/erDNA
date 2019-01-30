@@ -40,6 +40,11 @@ Now the addon repositories you make should mimic [erDNA-hello](https://github.co
 * When you create a tag in your GitHub Kodi repository, with a name such as `1.0.0`, Travis-CI will copy the repository addon to `gh-pages` branch and update the zip file and `addons.xml`
 * When you create a tag in one of your addons GitHub repository, with a name such as `1.0.0`, Travis-CI will trigger a special build in your Kodi repository that will clone that addon version into `gh-pages` branch, crate a zip file and update `addons.xml`
 
+### ToDo
 
+The nasty part of having zip files under version control remains, but Kodi requires all addons in a Kodi repository to be inside `DATADIR/plugin.package.id/plugin.package.id-version.zip`
+
+The assets in `addon.xml` (for each addon) can be specified as HTTP URLs, removing the need for having those in `DATADIR`, but there is no way to specify a different location for the zip file.  
+If GitHub pages supported redirects (real ones, not `meta` tag redirects), we could host fake zip locations that redirected to the correct addon release file.. Or send PR to kodi to accept zipfile custom location per addon in `addons.xml`...
 
 
