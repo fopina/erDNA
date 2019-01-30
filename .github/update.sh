@@ -13,9 +13,7 @@ rm -fr ~/otheraddon/.*
 
 changeToTargetBranch
 
-python create_repository.py */ ~/otheraddon/
-./build_readme.py
-git add .
+updateRepo ~/otheraddon/
 git commit -a -m "$REMOTE_NAME updated"
 
 setupDeployKeyAndPush

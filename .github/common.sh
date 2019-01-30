@@ -14,3 +14,9 @@ function changeToTargetBranch() {
 	git checkout FETCH_HEAD
 	git checkout -b $TARGET_BRANCH
 }
+
+function updateRepo() {
+	./create_repository.py -u $1
+	./build_readme.py
+	git add .
+}
