@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="repository.fopina.erdna" name="fopina/erDNA" version="1.0.5" provider-name="fopina">
+<addon id="repository.fopina.erdna" name="fopina/erDNA" version="1.0.6" provider-name="fopina">
     <extension point="xbmc.addon.repository">
         
         <dir minversion="17.0.0">
