@@ -15,6 +15,6 @@ rm -fr $HOME/otheraddon/.*
 changeToTargetBranch
 
 updateRepo ~/otheraddon/
-git commit -a -m "$TRAVIS_COMMIT_MESSAGE"
+git commit -a -m "Update from $REMOTE_GIT to $REMOTE_TAG"
 
 setupDeployKeyAndPush
