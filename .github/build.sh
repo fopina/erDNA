@@ -10,6 +10,8 @@ if [ "$TRAVIS_TAG" == "" ]; then
     exit 0
 fi
 
+. $(dirname $0)/common.sh
+
 changeToTargetBranch
 git checkout $TRAVIS_TAG -- repository.fopina.erdna
 python create_repository.py repository.fopina.erdna
