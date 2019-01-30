@@ -1,6 +1,6 @@
 TARGET_BRANCH="gh-pages"
 
-function setupDeployKey() {
+function setupDeployKeyAndPush() {
 	echo $REPOKEY | base64 -d > ~/deploy.key
 	chmod 600 ~/deploy.key
 	eval `ssh-agent -s`

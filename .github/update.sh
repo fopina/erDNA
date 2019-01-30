@@ -11,3 +11,10 @@ REMOTE_NAME=$3
 git clone --depth=1 --branch=$REMOTE_TAG $REMOTE_GIT ~/otheraddon
 
 changeToTargetBranch
+
+mkdir -p $REMOTE_NAME
+mv ~/otheraddon/* $REMOTE_NAME/
+git add $REMOTE_NAME
+git commit -a -m "$REMOTE_NAME updated"
+
+setupDeployKeyAndPush
