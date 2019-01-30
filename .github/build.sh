@@ -12,6 +12,7 @@ fi
 
 . $(dirname $0)/common.sh
 
+setupBuild
 changeToTargetBranch
 mkdir -p $HOME/temp
 git --work-tree $HOME/temp checkout $TRAVIS_TAG -- repository.fopina.erdna

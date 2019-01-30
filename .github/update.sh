@@ -4,16 +4,17 @@
 
 REMOTE_GIT=$1
 REMOTE_TAG=$2
-REMOTE_NAME=$3
 
 . $(dirname $0)/common.sh
 
-git clone --depth=1 --branch=$REMOTE_TAG $REMOTE_GIT ~/otheraddon
-rm -fr ~/otheraddon/.*
+setupBuild
+
+git clone --depth=1 --branch=$REMOTE_TAG $REMOTE_GIT $HOME/otheraddon
+rm -fr $HOME/otheraddon/.*
 
 changeToTargetBranch
 
 updateRepo ~/otheraddon/
-git commit -a -m "$REMOTE_NAME updated"
+git commit -a -m "$TRAVIS_COMMIT_MESSAGE"
 
 setupDeployKeyAndPush

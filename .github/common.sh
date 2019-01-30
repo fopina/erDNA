@@ -1,10 +1,16 @@
-TARGET_BRANCH="gh-pages"
+TARGET_BRANCH=gh-pages
+TOOLSDIR=$HOME/tools
+
+function setupBuild() {
+	rm -fr $TOOLSDIR
+	cp -a .github $TOOLSDIR
+}
 
 function setupDeployKeyAndPush() {
-	echo $REPOKEY | base64 -d > ~/deploy.key
-	chmod 600 ~/deploy.key
+	echo $REPOKEY | base64 -d > $TOOLSDIR/deploy.key
+	chmod 600 $TOOLSDIR/deploy.key
 	eval `ssh-agent -s`
-	ssh-add ~/deploy.key
+	ssh-add $TOOLSDIR/deploy.key
 	git remote add ssh git@github.com:fopina/erDNA.git
 	git push ssh gh-pages
 }
@@ -16,7 +22,7 @@ function changeToTargetBranch() {
 }
 
 function updateRepo() {
-	./create_repository.py -u $1
-	./build_readme.py
+	$TOOLSDIR/create_repository.py -d $PWD -u $1
+	$TOOLSDIR/build_readme.py $PWD
 	git add .
 }
