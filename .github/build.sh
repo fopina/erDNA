@@ -14,7 +14,7 @@ fi
 
 changeToTargetBranch
 git checkout $TRAVIS_TAG -- repository.fopina.erdna
-python create_repository.py repository.fopina.erdna
+python create_repository.py */
 git add repository.fopina.erdna
 git commit -a -m 'repository addon updated'
 setupDeployKeyAndPush
